@@ -41,14 +41,25 @@ public class PhoneBook {
     }
 
     public String reverseLookup(String phoneNumber)  {
-        return null;
+        Set<String> keys = phonebook.keySet();
+        StringBuilder sb = new StringBuilder();
+        for (String i : keys) {
+            if (phonebook.get(i).contains(phoneNumber)) {
+                sb.append(i);
+            }
+        }
+        return sb.toString();
     }
 
     public List<String> getAllContactNames() {
-        return null;
+        List<String> list = new ArrayList<>();
+        for (String i : phonebook.keySet()) {
+            list.add(i);
+        }
+        return list;
     }
 
     public Map<String, List<String>> getMap() {
-        return null;
+        return phonebook;
     }
 }
